@@ -1,3 +1,7 @@
+/*
+这段代码的排行榜功能没有完成完全，没有实现成绩的排行功能，
+只能记录成绩，所以排行功能我给注释掉了。。
+*/
 import java.io.*;
 import java.util.Random;
 import java.util.Scanner;
@@ -97,14 +101,14 @@ class function
             p[i] = (char)ch;
             ch = fr.read();
         }
-        System.out.println("一共有"+i+"个数据");
+      System.out.println("成绩依次是：");
         //paixu n = new paixu();
         //n.maopao(p,i);
-        /*for(j = 0;j<i ; j++)
+        for(j = 0;j<i ; j++)
         {
             System.out.print(p[j]);
             //ch = fr.read();
-        }*/
+        }
         fr.close();
     }
     private int suiji()
