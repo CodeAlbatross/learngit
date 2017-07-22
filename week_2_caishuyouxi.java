@@ -1,3 +1,4 @@
+/*è¿™ä¸ªä»£ç æ²¡æœ‰å®Œå…¨å®ç°æ’è¡Œæ¦œçš„åŠŸèƒ½ï¼Œä¸èƒ½å®ç°æˆç»©çš„æ’åºï¼Œæ‰€ä»¥æˆ‘æŠŠæ’è¡Œæ¦œåŠŸèƒ½çš„éƒ¨åˆ†æ³¨é‡Šæ‰äº†ã€‚ã€‚*/
 import java.io.*;
 import java.util.Random;
 import java.util.Scanner;
@@ -11,10 +12,10 @@ class test {
         jiemian a = new jiemian();
         a.dayin();
         while (true) {
-            System.out.println("Çë¿ªÊ¼ÄãµÄ²Ù×÷");
-            System.out.println("  1.¿ªÊ¼");
-            System.out.println("  2.²ÂÊıÓ¢ĞÛ°ñ");
-            System.out.println("  0.½áÊøÓÎÏ·");
+            System.out.println("è¯·å¼€å§‹ä½ çš„æ“ä½œ");
+            System.out.println("  1.å¼€å§‹");
+            System.out.println("  2.çŒœæ•°è‹±é›„æ¦œ");
+            System.out.println("  0.ç»“æŸæ¸¸æˆ");
             i = out.nextInt();
             switch (i) {
                 case 1:
@@ -37,7 +38,7 @@ class test {
         System.out.println();
         System.out.println("--------------------------");
         System.out.println("*                        *");
-        System.out.println("*  »¶Ó­½øÈë²ÂÊıÓÎÏ·v1.0  *");
+        System.out.println("*  æ¬¢è¿è¿›å…¥çŒœæ•°æ¸¸æˆv1.0  *");
         System.out.println("*                        *");
         System.out.println("--------------------------");
     }
@@ -49,34 +50,34 @@ class function
         int num,i,j;
         Scanner out = new Scanner(System.in);
         num =  suiji();
-        System.out.println("ÇëÊäÈëÄãËù²ÂµÄÒ»¸ö²»´óÓÚ100µÄÊı×Ö£º");
+        System.out.println("è¯·è¾“å…¥ä½ æ‰€çŒœçš„ä¸€ä¸ªä¸å¤§äº100çš„æ•°å­—ï¼š");
         i = out.nextInt();
         for( j=1;i!=num; )
         {
 
             if(i<num && i>0)
             {
-                System.out.println("Ğ¡ÁË");
+                System.out.println("å°äº†");
                 j++;
             }
             else if(i>num && i<100)
             {
-                System.out.println("´óÁË");
+                System.out.println("å¤§äº†");
                 j++;
             }
             else
             {
-                System.out.println("ÊäÈëÓĞÎó");
+                System.out.println("è¾“å…¥æœ‰è¯¯");
             }
-            System.out.println("ÇëÊäÈëÄãËù²ÂµÄÒ»¸ö²»´óÓÚ100µÄÊı×Ö£º");
+            System.out.println("è¯·è¾“å…¥ä½ æ‰€çŒœçš„ä¸€ä¸ªä¸å¤§äº100çš„æ•°å­—ï¼š");
             i = out.nextInt();
         }
-        System.out.println("Äã¼òÖ±ÊÇ¸öÌì²Å£¬´ğ°¸Îª"+num);
-        System.out.printf("ÄãÒ»¹²²ÂÁË%d´Î\n",j);
+        System.out.println("ä½ ç®€ç›´æ˜¯ä¸ªå¤©æ‰ï¼Œç­”æ¡ˆä¸º"+num);
+        System.out.printf("ä½ ä¸€å…±çŒœäº†%dæ¬¡\n",j);
         FileWriter fw = new FileWriter("paihangbang.txt",true);
         fw.write(String.format("%d\n",j));
         fw.close();
-        System.out.println("Ïë²»ÏëÔÙÀ´Ò»´Î£¿£¨1.yes/2.no£©");
+        System.out.println("æƒ³ä¸æƒ³å†æ¥ä¸€æ¬¡ï¼Ÿï¼ˆ1.yes/2.noï¼‰");
         int i1 = out.nextInt();
         if(i1==2)
         {
@@ -97,7 +98,7 @@ class function
             p[i] = (char)ch;
             ch = fr.read();
         }
-        System.out.println("Ò»¹²ÓĞ"+i+"¸öÊı¾İ");
+        System.out.println("ä¸€å…±æœ‰"+i+"ä¸ªæ•°æ®");
         //paixu n = new paixu();
         //n.maopao(p,i);
         /*for(j = 0;j<i ; j++)
