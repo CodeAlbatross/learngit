@@ -1,4 +1,3 @@
-/*这个代码没有完全实现排行榜的功能，不能实现成绩的排序，所以我把排行榜功能的部分注释掉了。。*/
 import java.io.*;
 import java.util.Random;
 import java.util.Scanner;
