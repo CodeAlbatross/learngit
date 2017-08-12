@@ -1,6 +1,7 @@
 import java.io.*;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
@@ -54,7 +55,31 @@ class Function
             }
         }
         finally {
-            JdbcUtils.free(rs,st,conn);
+            try
+            {
+                if(rs!=null)
+                    rs.close();
+            }catch (SQLException e){
+                e.printStackTrace();
+            }
+            finally {
+                try{
+                    if(st!=null)
+                        st.close();
+                }catch (SQLException e)
+                {
+                    e.printStackTrace();
+                }
+                finally {
+                    if(conn!=null)
+                        try{
+                            conn.close();
+                        }catch (SQLException e)
+                        {
+                            e.printStackTrace();
+                        }
+                }
+            }
         }
     }
     public static void sop(Object obj)
