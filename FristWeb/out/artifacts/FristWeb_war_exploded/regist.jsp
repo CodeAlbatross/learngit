@@ -14,8 +14,47 @@
 <!DOCTYPE HTML>
 <html lang="zh-cn">
 <head>
+    <script src="jquery-3.2.1.min.js"></script>
     <base href="<%=basePath%>">
     <meta charset="UTF-8">
+
+    <script>
+        function regist() {
+            var url = "/RegistServlet?username="+$("#username").val()+"&password="+$("#password").val()+"&rpsw="+$("#rpsw").val();
+            url = convertURL(url);
+            $.ajax({
+                url:url,
+                type:"get",
+                success:function (data) {
+                    data = data.replace(/^\s*/, "");
+                    data = data.replace(/\s*$/, "" );
+                    if(data == "ヾ(o◕∀◕)ﾉ success~")
+                    {
+                        alert(data);
+                        window.location.href="login.jsp";
+                    }
+                    else
+                    {
+                        alert(data);
+                    }
+                }
+            })
+        }
+        function convertURL(url){
+            //获取时间戳
+            var timstamp = (new Date()).valueOf();
+            //将时间戳信息拼接到url上
+            if(url.indexOf("?") >=0){
+                url = url + "&t=" + timstamp;
+            }else{
+                url = url + "?t=" + timstamp;
+            }
+            return url;
+        }
+
+
+
+    </script>
 
     <title>注册页面</title>
     <style>
@@ -23,7 +62,7 @@
             margin: 0;
             padding: 0;
         }
-        form {
+        style1 {
             width: 400px;
             height: 400px;
             border: 1px solid #ccc;
@@ -72,15 +111,16 @@
 
 <body>
 <center>
-    <form action="RegistServlet" method="post">
+    <style1>
+    <%--<form action="RegistServlet" method="post">--%>
         <h2>注册</h2>
-        请输入帐号：<input type="text" name="username">
-        请输入密码：<input type="password" name="password">
-        请确认密码：<input type="password" name="rpsw">
-        <button type="submit">注册</button>
+        请输入帐号：<input type="text" id="username">
+        请输入密码：<input type="password" id="password">
+        请确认密码：<input type="password" id="rpsw">
+        <button type="submit" onclick="regist()">注册</button>
         <font color="red" size="2"> ${msg }</font>
-    </form>
-
+    <%--</form>--%>
+   </style1>
 </center>
 </body>
 </html>

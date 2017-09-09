@@ -19,7 +19,7 @@ public class doFilter implements Filter {
         chain.doFilter(req, resp);
         System.out.println("拦截器启动");
         HttpServletRequest servletRequest = (HttpServletRequest)req;
-        HttpServletResponse servletResponse = (HttpServletResponse)resp;
+        //HttpServletResponse servletResponse = (HttpServletResponse)resp;
         HttpSession session = servletRequest.getSession();
         PrintWriter out = resp.getWriter();
         //从session中获取用户名和密码
@@ -33,7 +33,7 @@ public class doFilter implements Filter {
            //servletResponse.sendRedirect("login.jsp");
             req.getRequestDispatcher("/login.jsp").forward(req, resp);
 
-            System.out.println("正在跳转。。。。");
+            System.out.println("跳转完成");
         }else {
             //chain.doFilter(req,resp);
         }

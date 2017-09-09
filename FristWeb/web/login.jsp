@@ -11,6 +11,20 @@
 <head>
     <script src="jquery-3.2.1.min.js"></script>
     <script>
+        function refresh() {
+            var url = "/CheckCodeServlet";
+            url = convertURL(url);
+
+            var imge = "<img class="+"/CheckCodeServlet"+" src="+"\""+"CheckCodeServlet"+"\""+" id="+"img>";
+            $.ajax({
+                url:url,
+                type:"get",
+                success:function (data) {
+                    $("#img").html(imge+Math.random())
+                }
+            })
+        }
+
         function verify() {
             var url = "/LoginServlet?uuid="+$("#uuid").val()+"&passwd="+$("#passwd").val()+"&checkcode="+$("#checkcode").val();
 
@@ -29,7 +43,8 @@
                 }
                 else if(data1 == "验证码错误") {
                     alert(data1);
-                    window.location.href="login.jsp"
+                    //refresh()
+                    //window.location.href="login.jsp"
                 }
                 else {
                     alert(data1);
@@ -109,7 +124,7 @@
     <h2>欢迎登录</h2>
     <input type="text" id="uuid" placeholder="用户名" />
     <input type="password" id="passwd" placeholder="用户密码" />
-    <input type="text" id="checkcode" placeholder="验证码" /><img class="/CheckCodeServle" src="CheckCodeServlet">
+    <input type="text" id="checkcode" placeholder="验证码" /><img class="/CheckCodeServle" src="CheckCodeServlet" onclick='this.src=this.src+"?c="+Math.random()'/>
 
     <button type="submit" onclick="verify()">确认登录</button> <a href = "regist.jsp"><submit type="submit">点击注册</submit></a>
 </lalala>

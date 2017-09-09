@@ -47,8 +47,8 @@ public class search extends HttpServlet {
             {
                 out.println("<tr>");
                 out.println("<td>"+student.getName()+"</td>");
-                out.println("<td>"+student.getNumber()+"</td>");
                 out.println("<td>"+student.getAge()+"</td>");
+                out.println("<td>"+student.getNumber()+"</td>");
                 out.println("<td>"+student.getMajor()+"</td>");
                 out.println("</tr>");
             }

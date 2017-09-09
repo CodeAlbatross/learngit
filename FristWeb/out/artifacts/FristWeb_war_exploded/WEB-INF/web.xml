@@ -84,8 +84,28 @@
     </filter>
 
     <filter-mapping>
+    <filter-name>doFilter</filter-name>
+    <url-pattern>/function.jsp</url-pattern>
+</filter-mapping>
+
+    <filter-mapping>
         <filter-name>doFilter</filter-name>
-        <url-pattern>/function.jsp</url-pattern>
+        <url-pattern>/add</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>doFilter</filter-name>
+        <url-pattern>/delete</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>doFilter</filter-name>
+        <url-pattern>/modify</url-pattern>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>doFilter</filter-name>
+        <url-pattern>/search</url-pattern>
     </filter-mapping>
 
 </web-app>
